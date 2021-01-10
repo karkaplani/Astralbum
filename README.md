@@ -1,2 +1,2 @@
 # Astralbum
-Full stack web development team project aiming to sell album products.
+The project is done in a team with Fargol Azimi and Parnoor Gill. My part was the product page.
