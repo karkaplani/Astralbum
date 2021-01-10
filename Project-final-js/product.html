@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Product Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styleProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/product.js"></script>
+</head>
+<body>
+    <header>
+        <!--Navbar is made by Fargol-->
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div>
+                <div class="row">
+                    <!--Navbar Categories-->
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Categories</h4>
+                        <div class="options">
+                            <h3><strong>By Genre</strong></h3>
+                            <p><a href="search.html"><strong>Rock</strong></a></p>
+                            <p><a href="#search.html"><strong>Rap</strong></a></p>
+                            <p><a href="search.html"><strong>Jazz</strong></a></p>
+                        </div>
+                        <div class="optionscenter">
+                            <h3><strong>By Year</strong></h3>
+                            <p><a href="search.html"><strong>1980s</strong></a></p>
+                            <p><a href="search.html"><strong>1990s</strong></a></p>
+                            <p><a href="search.html"><strong>2000 and after</strong></a></p>
+                        </div>
+                    </div>
+                    <!--Navbar General-->
+                    <div class="col-sm-4 offset-md-1 py-4 center">
+                        <h4 class="text-white">General</h4>
+                        <a class="btn float-right btn-primary" href="#myPage">HOME</a>
+                        <a class="btn float-right btn-primary" href="#Shop">SHOP</a>
+                        <a class="btn float-right btn-primary" href="#contact">CONTACT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <!--Navbar Logo-->
+                <a href="landing.html" class="col-2" class="navbar-brand d-flex align-items-center">
+                    <img class="img mr-1 " src="logo.jpg" onclick="window.location.href = 'wheel-stuff/index.html'">
+                </a>
+                <div>
+                    <h2>AstraAlbum</h2>
+                </div>
+                <!--Navbar Search-->
+                <nav class="navbar navbar-light bg-dark col-7">
+                    <div class="top">
+                        <form class="form-inline" action="search.html" method="get">
+                            <input id="productSearchBox" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchItem">
+                            <button class="btn btn-outline-success my-2 my-sm-0" onclick="productSearch();" type="button">Search</button>
+                        </form>
+                    </div>
+                </nav>
+                <!--Navbar Join us-->
+                <div class="top">
+                    <button class="btn float-right btn-primary" type="button" data-toggle="modal" data-target="#signupModal">
+                        Join us
+                    </button>
+                </div>
+                <!--Navbar Cart-->
+                <button class="btn float-right " type="button" data-toggle="modal" data-target="#myModal">
+                    <svg class="cart" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart3" fill="silver" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                </button>
+                <!--Navbar Toggle-->
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+        <!-- Container (Product info section) -->
+        <!-- Added by Apo-->
+        <!-- For some reasons styling for only this div is implemented as inline CSS -->
+        <div style="margin: 65px 200px 100px 200px;" id="band" class="container"  >
+            <h1 id="albumTitle">
+                <hr>
+                Mirage
+                <hr>
+            </h1>
+            <h2>
+                <img id="image" align="left" src="<src>" >
+                <!-- This code was added in that indentation format for adjustment purpose -->
+                <pre id="info" align="left" class="albumInfo"></pre>
+            </h2>
+            <!-- Purchasing form section -->
+            <div class="purchasing">
+                <br>
+                    <span id="price" value="24">
+                        Price: $24
+                    </span>
+                <input type="number" id="quantity" name="quantity" onkeyup="changePrice();" onchange="changePrice();" min="1" value="1">
+                <br>
+                <input type="submit" id="buynow" value="Buy Now">
+                <input type="submit" id="addtocart" value="Add to Cart">
+            </div>
+
+            <!-- Tab section (Tab function and the reviews section added by Fargol) -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Description</a></li>
+                <li><a data-toggle="tab" href="#menu1">Tracklist</a></li>
+                <li><a data-toggle="tab" href="#menu2">Reviews</a></li>
+            </ul>
+            <!-- These additional info is displayed inside the tabs -->
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h2></h2>
+                    <p id="dis">
+                        Mirage is the second studio album by the English progressive rock band Camel,
+                        released on 1 March 1974. It features songs such as "The White Rider" and "Lady Fantasy".
+                        It is also a showcase for Andrew Latimer's flute, played in "Supertwister".
+                    </p>
+                </div>
+                <!--Tracklist-->
+                <div id="menu1" class="tab-pane fade">
+                    <h2></h2>
+                    <ol>
+                        <li>Freefall</li>
+                        <li>Supertwister</li>
+                        <li>Nimrodel</li>
+                        <li>Earthrise</li>
+                        <li>Lady Fantasy</li>
+                    </ol>
+                </div>
+                <!--Ratings-->
+                <div id="menu2" class="tab-pane fade">
+                    <span class="heading">User Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <hr class="bottomBorder">
+                    <div class="col-sm-6 form-group">
+                        <h3 align="left">Add a review!</h3>
+                        <!-- Rating star buttons-->
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                        <!-- Review adding -->
+                        <br>
+                        <br>
+                        <textarea id="yourReview"></textarea>
+                        <!-- Some fake reviews below -->
+                        <div class="reviews">
+                            <img src='man.png' alt="Avatar">
+                            <p align="left"><span>Max Smith</span>1 month ago</p>
+                            <p align="left">J'adore!!</p>
+                            <p>Rating:</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="reviews">
+                            <img src='man.png' alt="Avatar">
+                            <p align="left"><span>R. Johnson</span>2 years ago</p>
+                            <p align="left">Awesome Album!!</p>
+                            <p>Rating:</p>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container (Related Products Section) -->
+        <div id="tour" class="bg-1">
+            <h1 id="relTitle">
+                Related Products
+            </h1>
+            <div class="row">
+                <!-- Product images -->
+                <div class="column">
+                    <img src="moon.jpg">
+                </div>
+                <div class="column">
+                    <img src="sgt.jpg">
+                </div>
+                <div class="column">
+                    <img src="stage.jpg">
+                </div>
+                <!-- Brief product infos -->
+                <div class="textRow">
+                    <div class="textColumn">
+                        <p>
+                            Dark Side of the Moon-<br>
+                            Pink Floyd <br>
+                            $45.00
+                        </p>
+                    </div>
+                    <div class="textColumn">
+                        <p>
+                            Sgt. Peppers-The Beatles <br>
+                            $64.50
+                        </p>
+                    </div> 
+                    <div class="textColumn">
+                        <p>
+                            The Stage-Avenged Sevenfold <br>
+                            $30.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container (Contact Section) -->
+        <div id="contact" class="containerpage">
+            <h3 class="text-center">Contact</h3>
+            <p class="text-center"><em>Ask your question</em></p>
+            <div class="row">
+                <div class="col-md-4">
+                    <!--Inquiries-->
+                    <p>Inquiries</p>
+                    <p><span class="glyphicon glyphicon-phone"></span>Phone: +4379713435</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@astraalbum.com</p>
+                </div>
+                <!--Question form-->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <button class="btn pull-right" type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer (Updated by Fargol) -->
+        <footer class="text-center">
+            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a><br><br>
+            <!--Social Media-->
+            <div class="w3-xlarge w3-section">
+                <a href="https://www.instagram.com/astraalbum/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+                <a href="http://www.linkedin.com/fargolazimii"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+            </div>
+            <p><span class="glyphicon glyphicon-map-marker"></span>1385 Woodroffe Ave, Ottawa, ON K1G 7V8, Canada</p>
+        </footer>
+
+         <script>
+            $(document).ready(function(){
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+           // Make sure this.hash has a value before overriding default behavior
+           if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+           // Store hash
+           var hash = this.hash;
+
+           // Using jQuery's animate() method to add smooth page scroll
+           // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+           }, 900, function(){
+
+           // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+            });
+            } // End if
+            });
+            })
+        </script>
+    </div>
+
+    <!--Shopping Cart Modal-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!-- Modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart</h4>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>Enter your quantity:</label>
+                            <input type="number" class="form-control" id="psw" placeholder="How many?">
+                        </div>
+                        <div class="form-group">
+                            <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-block">
+                            Pay
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </form>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Need <a href="#">help?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!-- Modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-user"></span>Join us</h4>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="psw">Enter your Full Name:</label>
+                            <input type="text" class="form-control" id="psw" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">Enter your Date of Birth:</label>
+                            <input type="date" class="form-control" id="psw" placeholder="Date of Birth">
+                        </div>
+                        <div class="form-group">
+                            <label for="usrname">Email</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">Choose a username:</label>
+                            <input type="text" class="form-control" id="psw" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">Choose a Password:</label>
+                            <input type="password" class="form-control" id="psw" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-block">
+                            Sign up
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </form>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>Already a user?<a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal"> Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!-- Modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4><span class="glyphicon glyphicon-user"></span>Log in</h4>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="psw">Username:</label>
+                            <input type="text" class="form-control" id="psw" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">Password:</label>
+                            <input type="password" class="form-control" id="psw" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-block">
+                            Log in
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </form>
+                </div>
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </button>
+                    <p>New user? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal"> Sign up!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
